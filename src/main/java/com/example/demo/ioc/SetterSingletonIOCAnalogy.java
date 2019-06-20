@@ -24,6 +24,7 @@ public class SetterSingletonIOCAnalogy {
         b.hello();
         C c = (C)getC();
         c.hello();
+
     }
 
 
