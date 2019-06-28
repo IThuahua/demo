@@ -4,6 +4,7 @@ package com.example.demo.ioc;
  * @Author zhoushenghua on
  */
 public class ObjectFactory<T> {
+
     private String className;
     private T t;
 

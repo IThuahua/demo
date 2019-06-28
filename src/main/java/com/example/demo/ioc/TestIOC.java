@@ -1,6 +1,6 @@
 package com.example.demo.ioc;
 
-import com.example.demo.UserVo;
+import com.example.demo.rabbitMQ.UserVo;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;

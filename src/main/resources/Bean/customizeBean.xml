@@ -4,8 +4,19 @@
        xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="man" class="com.example.demo.rabbitMQ.UserVo"
-          p:name="hahaha"
-          p:age="26"
-    />
+    <bean id="orderFactory" class="com.example.demo.customizeIOC.OrderFactory" factory-method="createBean"/>
+
+    <bean id="test" class="com.example.demo.customizeIOC.Order">
+        <property name="map">
+            <map>
+                <entry key="a">
+                    <value>A</value>
+                </entry>
+                <entry key="b">
+                    <value>B</value>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
 </beans>

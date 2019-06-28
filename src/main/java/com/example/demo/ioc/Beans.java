@@ -1,6 +1,6 @@
 package com.example.demo.ioc;
 
-import com.example.demo.UserVo;
+import com.example.demo.rabbitMQ.UserVo;
 import org.springframework.context.annotation.Bean;
 
 /**

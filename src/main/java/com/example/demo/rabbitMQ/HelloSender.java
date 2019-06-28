@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.rabbitMQ;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ public class HelloSender {
 //    }
 
     public void send(){
-        amqpTemplate.convertAndSend("exchange", "topic.mess", " i love you ,zsh");
+        amqpTemplate.convertAndSend("exchange", "topic.msg", " i love you ,zsh");
 
     }
 
