@@ -1,11 +1,8 @@
 package com.example.demo.db.base.core;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
-
-import javax.sql.DataSource;
 
 
 public class DynamicDataSource extends AbstractRoutingDataSource {

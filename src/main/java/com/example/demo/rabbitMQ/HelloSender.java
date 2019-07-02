@@ -25,6 +25,22 @@ public class HelloSender {
 
     }
 
+    public static void main(String[] args) {
+        int i = 1;
+        int a = i+++i++;
+        System.out.println(a + ":" + i);
+        int j = 1;
+        int b = j++ + ++j;
+        System.out.println(b + ":" + j);
+        int k = 1;
+        int c = ++k+k++;
+        System.out.println(c + ":" + k);
+        int l = 1;
+        int d = ++l + ++l;
+        System.out.println(d + ":" + l);
+
+    }
+
 
 
 }

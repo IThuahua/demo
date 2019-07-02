@@ -1,5 +1,7 @@
 package com.example.demo.testJVMTool;
 
+import java.lang.management.GarbageCollectorMXBean;
+import java.lang.management.ManagementFactory;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +31,11 @@ public class JconsoleTool {
     }
 
     public static void main(String[] args) throws Exception {
+        //打印垃圾回收器
+        List<GarbageCollectorMXBean> list = ManagementFactory.getGarbageCollectorMXBeans();
+        for (GarbageCollectorMXBean bean : list) {
+            System.out.println(bean.getName());
+        }
         fillHeap(1000);
         while(true){
             //让其一直运行着
