@@ -1,4 +1,4 @@
-package com.example.demo.semaphore;
+package com.example.demo.concurrency;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -14,7 +14,7 @@ public class SemaphoreDemo {
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newCachedThreadPool();
 
-        //Semaphore semaphore = new Semaphore(1,true);
+        //Semaphore concurrency = new Semaphore(1,true);
 
         Semaphore semaphore = new Semaphore(2);
         for(int i = 0; i<6; i++){
@@ -37,8 +37,6 @@ public class SemaphoreDemo {
 
                     semaphore.release();
                     System.out.println("线程" + Thread.currentThread().getName() + "已经离开,当前并发数为:" + (2-semaphore.availablePermits()));
-
-
                 }
             };
             executorService.execute(runnable);
