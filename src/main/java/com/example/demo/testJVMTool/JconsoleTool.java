@@ -20,7 +20,7 @@ public class JconsoleTool {
     }
 
     public static void fillHeap(int num) throws InterruptedException {
-        Thread.sleep(20000); //先运行程序，在执行监控
+        Thread.sleep(2000); //先运行程序，在执行监控
         List<OOMObject> list = new ArrayList<OOMObject>();
         for (int i = 0; i < num; i++) {
             // 稍作延时，令监视曲线的变化更加明显
