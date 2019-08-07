@@ -8,7 +8,8 @@ import java.util.List;
 /**
  * @Author zhoushenghua on
  */
-public class JconsoleTool {
+public class
+JconsoleTool {
 
     /**
      *  设置虚拟机参数：
