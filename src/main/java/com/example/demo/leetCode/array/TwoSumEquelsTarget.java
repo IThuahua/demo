@@ -13,7 +13,7 @@ import java.util.Map;
  * 所以返回 [0, 1]
  * @Author zhoushenghua on
  */
-public class TwoSum {
+public class TwoSumEquelsTarget {
 
     public static void main(String[] args) {
         int[] nums = {2, 7, 11, 15};
