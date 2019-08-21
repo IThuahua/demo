@@ -85,6 +85,41 @@ public class ReverseString {
 
     }
 
+    /**
+     * 给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。
+     *
+     * 假设环境只能存储得下 32 位的有符号整数，则其数值范围为 [−231,  231 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。
+     *
+     */
+    public static int reverseInt(int x){
+        String strx = String.valueOf(x);
+        if(x < 0){
+            strx = String.valueOf(x).replace("-","");
+        }
+        char[] array = strx.toCharArray();
+        for(int i = 0,len=array.length; i <len/2; i++){
+            char temp = array[i];
+            array[i] = array[len -1 -i];
+            array[len -1 -i] = temp;
+        }
+        String reverseStr = new String(array);
+        if(x < 0){
+            reverseStr = "-" + reverseStr;
+        }
+        long result = Long.valueOf(reverseStr);
+        return (Integer.MIN_VALUE > result || Integer.MAX_VALUE < result) ? 0:(int)result;
+    }
+
+    public static int reverseIntEazy(int x){
+        long result = 0;
+        while (x != 0){
+            result *= 10;
+            result += x%10;
+            x /= 10;
+        }
+        return (Integer.MIN_VALUE > result || Integer.MAX_VALUE < result) ? 0:(int)result;
+    }
+
 
 
 
