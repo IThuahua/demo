@@ -113,12 +113,12 @@ public class RedisUtil {
     }
 
     public long incr(String key, long incrNum){
-        if(incrNum < 0) throw new RuntimeException("低增值必须大于0");
+        if(incrNum < 0) throw new RuntimeException("递增值必须大于0");
         return valueOperations.increment(key, incrNum);
     }
 
     public long decr(String key, long decrNum){
-        if(decrNum < 0) throw new RuntimeException("低减值必须大于0");
+        if(decrNum < 0) throw new RuntimeException("递减值必须大于0");
         return valueOperations.decrement(key, -decrNum);
     }
 
