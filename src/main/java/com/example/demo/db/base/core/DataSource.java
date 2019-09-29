@@ -7,6 +7,6 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface DatSource {
+public @interface DataSource {
     DataSourceEnum description() default DataSourceEnum.DATASOURCE_SOURCE1;
 }
