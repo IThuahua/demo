@@ -1,6 +1,6 @@
 package com.example.demo.leetCode.array;
 
-import org.springframework.util.CollectionUtils;
+import org.apache.commons.collections.CollectionUtils;
 
 import java.util.HashSet;
 import java.util.Set;

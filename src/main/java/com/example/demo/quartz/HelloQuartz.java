@@ -1,8 +1,6 @@
 package com.example.demo.quartz;
 
 import org.quartz.*;
-
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
