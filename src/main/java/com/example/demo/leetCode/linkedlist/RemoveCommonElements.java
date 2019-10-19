@@ -19,34 +19,7 @@ public class RemoveCommonElements {
         ListNode listNode = removeCommonElements(node);
         System.out.println(listNode);
 
-
-        ListNode node1 = new ListNode(1);
-        node1.next = new ListNode(3);
-        node1.next.next = new ListNode(2);
-        node1.next.next.next = node1;
-        System.out.println(hasCycle(node1)?"有":"无");
-
     }
-
-    /*
-     * 判断链表是否有环,此处用Floyd环判定算法
-     */
-    public static boolean hasCycle(ListNode head){
-        if(head == null){
-            return false;
-        }
-        ListNode slow = head;
-        ListNode fast = head;
-        while (slow.next != null && fast.next.next != null){
-            slow = slow.next;
-            fast = fast.next.next;
-            if(slow == fast){
-                return true;
-            }
-        }
-        return false;
-    }
-
 
     /*
      * 删除未排序链表中,所有重复的元素,使每个元素值出现一次,如：输入1 -> 1 -> 3 -> 2 -> 1；输出1 -> 3 -> 2。
