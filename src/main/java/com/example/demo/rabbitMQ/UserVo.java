@@ -15,6 +15,9 @@ public class UserVo implements Serializable {
 
     private String address;
 
+    public UserVo() {
+    }
+
     public UserVo(String name, int age, String address) {
         this.name = name;
         this.age = age;
