@@ -11,10 +11,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ComponentScanBean {
 
-    @Bean("userBean")
-    public UserVo user(){
-        return new UserVo("Bean", 18, "US");
-    }
+//    @Bean("userBean")
+//    public UserVo user(){
+//        return new UserVo("Bean", 18, "US");
+//    }
 
     public static void main(String[] args) throws Exception{
         ApplicationContext context = new AnnotationConfigApplicationContext(ComponentScanBean.class);

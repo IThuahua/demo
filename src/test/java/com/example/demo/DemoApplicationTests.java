@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.aop.TestImpl;
 import com.example.demo.rabbitMQ.HelloSender;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,6 +15,9 @@ public class DemoApplicationTests {
     @Autowired
     private HelloSender helloSender;
 
+    @Autowired
+    private TestImpl testImpl;
+
     @Test
     public void contextLoads() {
     }
@@ -23,5 +27,11 @@ public class DemoApplicationTests {
         helloSender.send();
     }
 
+
+    @Test
+    public void testAop(){
+        String s = testImpl.sayHi();
+        System.out.println(s);
+    }
 
 }

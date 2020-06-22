@@ -10,10 +10,10 @@ import org.springframework.context.annotation.Configuration;
 //@Order(1)
 public class BeanTest {
 
-    @Bean("userBean")
-    public UserVo user(){
-        return new UserVo("BeanNameTest", 18, "US");
-    }
+//    @Bean("userBean")
+//    public UserVo user(){
+//        return new UserVo("BeanNameTest", 18, "US");
+//    }
 
 //    @Bean("userBean")
 //    public UserVo user2(){
