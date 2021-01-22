@@ -1,5 +1,7 @@
 package com.example.demo.aop.asm;
 
+import java.lang.management.ManagementFactory;
+
 /**
  * 利用ASM的CoreAPI来增强类。这里不纠结于AOP的专业名词如切片、通知，只实现在方法调用前、后增加逻辑，
  * 通俗易懂且方便理解。首先定义需要被增强的Base类：其中只包含一个process()方法，方法内输出一行“process”。
@@ -18,7 +20,28 @@ package com.example.demo.aop.asm;
  *
  */
 public class Base {
-    public void process(){
+    public static void process(){
         System.out.println("process");
+    }
+
+
+    /**
+     * 模拟持续运行的jvm
+     * @param args
+     */
+    public static void main(String[] args) {
+        String name = ManagementFactory.getRuntimeMXBean().getName();
+        String s = name.split("@")[0];
+        System.out.println("pid:" + s);
+        while (true) {
+            try {
+                Thread.sleep(5000L);
+            } catch (InterruptedException e) {
+                break;
+            }
+            process();
+        }
+
+
     }
 }
