@@ -40,7 +40,7 @@ public class IsValid {
                 stack.push(arr[i]);
             }
         }
-        return stack.size() == 0?true:false;
+        return stack.size() == 0;
     }
 
 }

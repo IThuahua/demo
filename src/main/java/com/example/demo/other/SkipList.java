@@ -76,6 +76,7 @@ public class SkipList<T> {
      * (1)首先通过查找的方式，找到待插入的左节点。插入的话最底层肯定是需要插入的，所以通过链表插入节点(需要考虑是否为末尾节点)
      * (2)插入完这一层，需要考虑上一层是否插入，首先判断当前索引层级，如果大于最大值那么就停止(比如已经到最高索引层了)。否则设置一个随机数1/2的概率向上插入一层索引(因为理想状态下的就是每2个向上建一个索引节点)。
      * (3)继续(2)的操作，直到概率退出或者索引层数大于最大索引层。
+     *
      * @param node
      */
     public void add(SkipNode node) {
@@ -137,7 +138,7 @@ public class SkipList<T> {
     /**
      * 打印数据
      */
-    public void printNode(){
+    public void printNode() {
         SkipNode teamNode = headNode;
         int index = 0; //层数
         SkipNode last = teamNode;
@@ -170,7 +171,7 @@ public class SkipList<T> {
     public static void main(String[] args) {
         SkipList<Integer> list = new SkipList<>();
         for (int i = 1; i < 20; i++) {
-            list.add(new SkipNode(i,"值"));
+            list.add(new SkipNode(i, "值"));
         }
         System.out.println("原所有节点数据:");
         list.printNode();
@@ -184,6 +185,7 @@ public class SkipList<T> {
 
 /**
  * 节点模型定义
+ *
  * @param <T>
  */
 class SkipNode<T> {
