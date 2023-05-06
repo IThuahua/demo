@@ -26,30 +26,33 @@ public class AddTwoNum {
     }
 
     public static ListNode addTwoNum(ListNode l1, ListNode l2){
-        ListNode t1 = l1;
-        ListNode t2 = l2;
-        int nextAddNum = 0;
-        while(t1 != null && t2 != null){
-            //补齐位数,末尾为高位,补0
-            if(t1.next == null && t2.next != null){
-                t1.next = new ListNode(0);
-            }
-            if(t2.next == null && t1.next != null){
-                t2.next = new ListNode(0);
-            }
-
-            int sum = nextAddNum + t1.val + t2.val;
-            //t1与l1同一指针,即此处修改l1的对应位的值
-            t1.val = sum%10;
-            nextAddNum = sum/10;
-            //防止高位相加超过9
-            if(t1.next == null && t2.next == null && nextAddNum != 0){
-                t1.next = new ListNode(nextAddNum);
-            }
-            t1 = t1.next;
-            t2 = t2.next;
+        if (l1 == null) {
+            return l2;
         }
-        return l1;
+        if (l2 == null) {
+            return l1;
+        }
+        ListNode result = new ListNode(0); //结果链表，参与运算
+        ListNode resultTail = result;
+
+        while (l1 != null || l2 != null) {
+            if (l1 == null) {
+                l1 = new ListNode(0);
+            }
+            if (l2 == null) {
+                l2 = new ListNode(0);
+            }
+            int sum = l1.val + l2.val + resultTail.val;
+            resultTail.val = sum % 10; //更新当前位数值
+            if (l1.next == null && l2.next == null && sum / 10 == 0) {
+                break;
+            }
+            resultTail.next = new ListNode(sum / 10); //更新进位数值，并参与到进位的运算
+            resultTail = resultTail.next;
+            l1 = l1.next;
+            l2 = l2.next;
+        }
+        return result;
     }
 
     static class ListNode {
