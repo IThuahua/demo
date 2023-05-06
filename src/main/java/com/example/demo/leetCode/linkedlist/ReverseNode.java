@@ -45,15 +45,22 @@ public class ReverseNode {
 
     //迭代法
     public static ListNode reverseList(ListNode head){
-        ListNode result = null;
-        ListNode cur = head;
-        while(cur != null){
-            ListNode next = cur.next;
-            cur.next = result;
-            result = cur;
-            cur = next;
+       if (head == null) {
+            return null;
         }
-        return result;
+
+        //结果，需要将链表最头部的元素放在最尾部
+        ListNode result = null;
+        //当前反转的节点
+        ListNode current = head;
+
+        while (current != null) {
+            ListNode next = current.next; //下一个要反转的节点
+            current.next = result; //把之前已反转的链表追加到当前节点后面，实现当前节点的反转
+            result = current; //当前节点就是包含当前节点的已经反转好后的链表了
+            current = next;  //要反转的节点变更为下一个。
+        }
+       return result;
     }
 
     static class ListNode {
