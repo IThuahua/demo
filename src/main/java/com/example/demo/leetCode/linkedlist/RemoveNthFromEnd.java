@@ -23,27 +23,26 @@ public class RemoveNthFromEnd {
     }
 
     public static ListNode removeNthFromEnd(ListNode head, int n){
-        if(n < 0){
+        if (head == null || n <= 0) {
             return head;
         }
+        int count = 0; //总长度
         ListNode temp = head;
-        Map<Integer, ListNode> map = new HashMap<>();
-        int i = 1;
-        while (temp != null){
-            map.put(i, temp);
-            i++;
+        while (temp != null) {
+            count++;
             temp = temp.next;
         }
-        if(map.size() == 1 && n == 1){
-            return null;
-        }else if(map.size() < n){
-            return head;
-        }else if(map.size() == n){
-            return head.next;
-        }else{
-            map.get(map.size()-n).next = map.get(map.size()-n+2);
+
+        ListNode result = new ListNode(0);
+        result.next = head;
+        ListNode current = result; //当前节点位置，其后节点需要删除
+        for (int i = 0; i < count - n; i++) {
+            current = current.next;
         }
-        return head;
+        if (current.next != null) {
+            current.next = current.next.next; //删除节点
+        }
+        return result.next;
     }
 
     static class ListNode {
